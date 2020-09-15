@@ -1,7 +1,7 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
+ * This class represents a simple picture. It draws a picture of James standing
+ * on his giant pumpkin!
+ * You can set it to black-and-white display and back to
  * colors (only after it's been drawn, of course).
  *
  * This class was written as an early example for teaching Java with BlueJ.
@@ -11,10 +11,14 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Circle pumpkin;
+    private Triangle stem;
+    private Triangle leftEye;
+    private Triangle rightEye;
+    private Square mouth1;
+    private Square mouth2;
+    private Square mouth3;
+    private Person james;
     private boolean drawn;
 
     /**
@@ -22,10 +26,14 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        pumpkin = new Circle();
+        stem = new Triangle(); 
+        leftEye = new Triangle();
+        rightEye = new Triangle();
+        mouth1 = new Square();
+        mouth2 = new Square();
+        mouth3 = new Square();
+        james = new Person();
         drawn = false;
     }
 
@@ -35,28 +43,53 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.changeColor("blue");
-            wall.makeVisible();
+            pumpkin.changeColor("yellow");
+            pumpkin.moveHorizontal(-90);
+            pumpkin.moveVertical(-30);
+            pumpkin.changeSize(230);
+            pumpkin.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            stem.changeColor("green");
+            stem.changeSize(80, 30);
+            stem.moveHorizontal(45);
+            stem.moveVertical(-140);
+            stem.makeVisible();
+            
+            leftEye.changeColor("black");
+            leftEye.changeSize(40, 40);
+            leftEye.moveHorizontal(0);
+            leftEye.moveVertical(-30);
+            leftEye.makeVisible();
+            
+            rightEye.changeColor("black");
+            rightEye.changeSize(40, 40);
+            rightEye.moveHorizontal(90);
+            rightEye.moveVertical(-30);
+            rightEye.makeVisible();
+            
+            mouth1.changeColor("black");
+            mouth1.changeSize(20);
+            mouth1.moveHorizontal(-65);
+            mouth1.moveVertical(95);
+            mouth1.makeVisible();
+            
+            mouth2.changeColor("black");
+            mouth2.changeSize(20);
+            mouth2.moveHorizontal(-44);
+            mouth2.moveVertical(95);
+            mouth2.makeVisible();
+            
+            mouth3.changeColor("black");
+            mouth3.changeSize(20);
+            mouth3.moveHorizontal(-86);
+            mouth3.moveVertical(95);
+            mouth3.makeVisible();
+            
+            james.changeColor("black");
+            james.moveHorizontal(5);
+            james.moveVertical(-150);
+            james.makeVisible();
+
             drawn = true;
         }
     }
@@ -66,10 +99,14 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        pumpkin.changeColor("black");
+        stem.changeColor("black");
+        leftEye.changeColor("white");
+        rightEye.changeColor("white");
+        mouth1.changeColor("white");
+        mouth2.changeColor("white");
+        mouth3.changeColor("white");
+        james.changeColor("black");
     }
 
     /**
@@ -77,9 +114,13 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+        pumpkin.changeColor("yellow");
+        stem.changeColor("green");
+        leftEye.changeColor("black");
+        rightEye.changeColor("black");
+        mouth1.changeColor("black");
+        mouth2.changeColor("black");
+        mouth3.changeColor("black");
+        james.changeColor("black");
     }
 }
